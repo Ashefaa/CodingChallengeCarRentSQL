@@ -74,6 +74,20 @@ INSERT INTO Customers VALUES
 ('William','Taylor','willian@example.com',555-321-6547),
 ('Olivia','Adams','olivia@gmail.com',555-765-4321)
 
+ALTER TABLE Customers
+ALTER COLUMN PhoneNumber VARCHAR(20)
+
+UPDATE Customers SET PhoneNumber='555-555-5555' WHERE customerID=1
+UPDATE Customers SET PhoneNumber='555-123-4567' WHERE customerID=2
+UPDATE Customers SET PhoneNumber='555-789-1234' WHERE customerID=3
+UPDATE Customers SET PhoneNumber='555-456-7890' WHERE customerID=4
+UPDATE Customers SET PhoneNumber='555-987-6543' WHERE customerID=5
+UPDATE Customers SET PhoneNumber='555-234-5678' WHERE customerID=6
+UPDATE Customers SET PhoneNumber='555-876-5432' WHERE customerID=7
+UPDATE Customers SET PhoneNumber='555-432-1098' WHERE customerID=8
+UPDATE Customers SET PhoneNumber='555-321-6547' WHERE customerID=9
+UPDATE Customers SET PhoneNumber='555-765-4321' WHERE customerID=10
+ 
 --INSERT VALUES INTO Lease TABLE
 INSERT INTO Lease VALUES
 (1,1,'2023-01-01','2023-01-05','Daily'),
@@ -143,6 +157,7 @@ WHERE C.PhoneNumber=@No
 --7)Calculate the average daily rate of all available cars.
 SELECT AVG(dailyRate)AS Average_rate
 FROM Vehicles
+WHERE available=1
 
 --8)Find the car with the highest daily rate.
 SELECT * from Vehicles
